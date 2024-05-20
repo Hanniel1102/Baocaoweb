@@ -1,81 +1,64 @@
-var listproducts=[
-  {
-    Image:"../pic/cart/phone.png",
-    name:'Iphone 15 Pro Max',
-    firstprice:2000.00,
-    quantity:1,
-    total:2000.00,
-  },
-  {
-    Image:"../pic/cart/watch.png",
-    name:'Apple Watch (2nd Gen)',
-    firstprice:400.00,
-    quantity:1,
-    total:400.00,
-  },
-];
-function render(){
-  let subtotal=0;
-  listproducts.forEach(function(listproduct){
-    subtotal+=listproduct.quantity*listproduct.firstprice;
-  })
-  let carttotal=subtotal;
-  for(var i=0;i<listproducts.length;i++){
-    listproducts[i].total=listproducts[i].firstprice*listproducts[i].quantity;
+document.addEventListener('DOMContentLoaded', function() {
+  const cart = document.getElementById('cart-list');
+  const totalPriceElement1 = document.getElementById('total-price1');
+  const totalPriceElement2 = document.getElementById('total-price2');
+  const updateCartButton = document.getElementById('update-cart');
+  const updateSuccessMessage = document.getElementById('update-success');
+
+  function updateTotal() {
+      let total = 0;
+      const items = cart.getElementsByClassName('item1');
+      for (let item of items) {
+          const price = parseFloat(item.getElementsByClassName('price')[0].getAttribute('data-price'));
+          const quantity = parseInt(item.getElementsByClassName('in1')[0].value);
+          const itemTotal = price * quantity;
+          item.getElementsByClassName('item-total')[0].innerText = `$${itemTotal.toFixed(2)}`;
+          total += itemTotal;
+      }
+      totalPriceElement1.innerText = `$${total.toFixed(2)}`;
+      totalPriceElement2.innerText = `$${total.toFixed(2)}`;
   }
-  const html=listproducts.map(function(listproduct){
-    return `
-    <div class="item1">
-      <div class="i1">
-        <img src="${listproduct.Image}">
-        <div class="t3">
-            <p>${listproduct.name}</p>
-            <p class="price" style="color: #FF6543;">$${listproduct.firstprice}</p>
-        </div>
-      </div>
-      <div class="i2">
-          <button class="minus">-</button>
-          <div class="in1"><span>${listproduct.quantity}</span></div>
-          <button class="plus">+</button>
-      </div>
-      <div class="i3"><p>$${listproduct.total}</p></div>
-      <button class="i4"><img src="../pic/cart/c.png"></button>
-    </div>`
-  }).join('');
-  document.querySelector('.items').innerHTML=html;
-  document.querySelector('.t5').innerHTML=
-  `
-    <div class="t5-0">
-      <p class="t5-1">SUBTOTAL</p><span class="t5-2">$${subtotal.toFixed(2)}</span>
-    </div>
-    <div class="t5-0">
-      <p class="t5-1">TOTAL</p><span class="t5-2">$${carttotal.toFixed(2)}</span>
-    </div>
-  `;
-  const minusbut=document.querySelectorAll('.minus');
-  const plusbut=document.querySelectorAll('.plus');
-  const delbut=document.querySelectorAll('.i4');
-  function updatesolg(index,quantity){
-    if(quantity<0){
-      return;
+
+  cart.addEventListener('click', function(event) {
+      if (event.target.classList.contains('plus') || event.target.classList.contains('minus')) {
+          const item = event.target.closest('.item1');
+          const quantityInput = item.getElementsByClassName('in1')[0];
+          let quantity = parseInt(quantityInput.value);
+
+          if (event.target.classList.contains('plus')) {
+              quantity += 1;
+          } else if (event.target.classList.contains('minus') && quantity > 0) {
+              quantity -= 1;
+          }
+
+          quantityInput.value = quantity;
+          updateTotal();
+      }
+      if (event.target.classList.contains('delete')) {
+        const item = event.target.closest('.item1');
+        item.remove();
+        updateTotal();
     }
-    listproducts[index].quantity=quantity;
-    render();
-  }
-  function remove(index){
-    listproducts.splice(index,1)
-    render(); 
-  }
-  for(let i=0;i<delbut.length;i++){
-    plusbut[i].addEventListener('click',function(){
-      updatequantity(i,listproducts[i].quantity+1);
-    })
-    minusbut[i].addEventListener('click',function(){
-      updatequantity(i,listproducts[i].quantity-1);
-    })
-    delbut[i].addEventListener('click',function(){
-      remove();
-    })
-  }
-}
-render()
+  });
+
+  cart.addEventListener('input', function(event) {
+      if (event.target.classList.contains('in1')) {
+          const quantity = parseInt(event.target.value);
+          if (!isNaN(quantity) && quantity > 0) {
+              updateTotal();
+          }
+      }
+  });
+
+  updateCartButton.addEventListener('click', function() {
+      updateTotal();
+      updateSuccessMessage.style.display = 'block';
+      setTimeout(() => {
+          updateSuccessMessage.style.display = 'none';
+      }, 2000);
+  });
+
+  // Initialize total
+  updateTotal();
+   
+});

@@ -24,59 +24,58 @@
                 <div class="t1"><p>QUANTITY</p></div>
                 <div class="t1"><p>SUBTOTAL</p></div>
             </div>
-            <div class="items">
-                <p class="t2">///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</p>
-                <div class="item1">
+            <p class="t2">///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</p>
+            <ul class="items" id="cart-list">
+                <li class="item1">
                     <div class="i1">
                         <img src="../pic/cart/phone.png" alt="">
                         <div class="t3">
-                            <p>Iphone 15 Pro Max</p>
-                            <p class="price" style="color: #FF6543;">$2000.00</p>
+                            <span class="name">Iphone 15 Pro Max</span><br>
+                            <span class="price" style="color: #FF6543;" data-price="2000">$2000.00</span>
                         </div>
                     </div>
                     <div class="i2">
                         <button class="minus">-</button>
-                        <div class="in1"><span>1</span></div>
+                        <input type="text" class="in1" value="1">
                         <button class="plus">+</button>
                     </div>
-                    <div class="i3"><p>$2000.00</p></div>
-                    <button class="i4"><img src="../pic/cart/c.png" alt=""></button>
-                </div>
-                <div class="item1">
+                    <div class="i3"><span class="item-total">$2000.00</span></div>
+                    <button class="i4"><img src="../pic/cart/c.png" alt="" class="delete"></button>
+                </li>
+                <li class="item1">
                     <div class="i1">
                         <img src="../pic/cart/watch.png" alt="">
                         <div class="t3">
-                            <p>Apple Watch (2nd Gen)</p>
-                            <p style="color: #FF6543;">$400.00</p>
+                            <span class="name">Apple Watch (2nd Gen)</span><br>
+                            <span class="price" style="color: #FF6543;" data-price="400">$400.00</span>
                         </div>
                     </div>
                     <div class="i2">
-                        <button>-</button>
-                        <div class="in1"><span>1</span></div>
-                        <button>+</button>
+                        <button class="minus">-</button>
+                        <input type="text" class="in1" value="1">
+                        <button class="plus">+</button>
                     </div>
-                    <div class="i3"><p>$400.00</p></div>
-                    <button class="i4"><img src="../pic/cart/c.png" alt=""></button>
-                </div>
-            </div> 
+                    <div class="i3"><span class="item-total">$400.00</span></div>
+                    <button class="i4"><img src="../pic/cart/c.png" alt="" class="delete"></button>
+                </li>
+            </ul>
         </div>
         <div class="cart-total">
             <p class="t4">CART TOTALS</p>
-            <form>
-                <div class="t5">
-                    <div class="t5-0">
-                        <p class="t5-1">SUBTOTAL</p><span class="t5-2">$2400.00</span>
-                    </div>
-                    <div class="t5-0">
-                        <p class="t5-1">TOTAL</p><span class="t5-2">$2400.00</span>
-                    </div>
+            <div class="t5">
+                <div class="t5-0" id="total">
+                    <p class="t5-1">SUBTOTAL</p><span class="t5-2" id="total-price1">$2400.00</span>
                 </div>
-            </form>
+                <div class="t5-0" id="total">
+                    <p class="t5-1">TOTAL</p><span class="t5-2" id="total-price2">$2400.00</span>
+                </div>
+            </div>
             <div class="butt0">
-                <button class="butt1">UPDATE CART</button>
+                <button class="butt1" id="update-cart">UPDATE CART</button>
                 <button class="butt2">CONTINUE SHOPPING</button>
                 <button class="butt3">PROCEED TO CHECKOUT</button>
             </div>
+            <div id="update-success">Update successfully!</div>
         </div>
     </div>
     <div class="review">
