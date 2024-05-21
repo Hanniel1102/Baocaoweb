@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const updateCartButton = document.getElementById('update-cart');
   const updateSuccessMessage = document.getElementById('update-success');
 
+  //Hàm này được sử dụng để cập nhật tổng giá trị của giỏ hàng và hiển thị lại các giá trị liên quan sau mỗi lần thay đổi.
   function updateTotal() {
       let total = 0;
       const items = cart.getElementsByClassName('item1');
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
       totalPriceElement2.innerText = `$${total.toFixed(2)}`;
   }
 
+  //Đoạn mã này bắt sự kiện click và input trên phần tử giỏ hàng để thực hiện các hành động như thêm/sửa/xóa mặt hàng và cập nhật tổng giá trị của giỏ hàng.
   cart.addEventListener('click', function(event) {
       if (event.target.classList.contains('plus') || event.target.classList.contains('minus')) {
           const item = event.target.closest('.item1');
@@ -50,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
 
+  //Khi nút cập nhật giỏ hàng được nhấn, hàm này sẽ được gọi để cập nhật tổng giá trị của giỏ hàng 
+  //và hiển thị thông báo cập nhật thành công trong một khoảng thời gian ngắn trước khi ẩn đi.
   updateCartButton.addEventListener('click', function() {
       updateTotal();
       updateSuccessMessage.style.display = 'block';
@@ -58,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 2000);
   });
 
-  // Initialize total
+//Gọi hàm updateTotal() để khởi tạo tổng giá trị ban đầu của giỏ hàng khi trang web được tải lên.
   updateTotal();
    
 });
