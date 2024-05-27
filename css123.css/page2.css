@@ -1,0 +1,230 @@
+body{
+    font-family: Outfit;
+    width: 100%;
+    margin: 0;
+    font-weight: 160;
+}
+iframe {
+    width: 100%;
+    margin: 0%;
+    border: 0;
+}
+.content{
+    background-color: #F5F5F5;
+    width: 100%;
+    height: 135px;
+    text-align: center;
+    justify-content: center;
+    font-family: Outfit;
+   
+    font-weight: 130;
+    line-height: 45px;
+    letter-spacing: 6%;
+    padding-top: 70px;
+}
+.features{
+    
+    align-content: center;
+    justify-content: center;
+    padding: 0;
+    margin-left: 130px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.features img{
+    margin-right: 8px; 
+    width: 20px;
+    height: 20px;
+    ;
+}
+.features .features_1{
+    float:left;
+    margin-right: 70px;
+    font-weight: 130;
+   
+    
+}
+.features .features_2{
+    float:left;
+    margin-right: 80px;
+    font-weight: 50;
+}
+.features .features_3{
+    float:left;
+    margin-right:80px;
+    font-weight: 130;
+}
+.features .features_4{
+   float:left;
+   font-weight: 130;
+   margin-right: 100px;
+}
+.about_us {
+    display: flex;
+    margin-left: 130px;
+    margin-top: 40px;
+}
+.about_us .video{
+    margin-right: 130px;
+}
+.about_us .text_content{
+   margin-top: 125px;
+   margin-left: 30px;
+}
+button{
+    border-radius: 100px ;
+    width: 145px;
+    height: 45px;
+    background-color:  #ff6543;
+    color: white;
+    border:none;
+}
+ 
+.reviews{
+    display: flex;
+    margin-left: 130px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    gap: 30px;
+}
+
+
+.review{
+    
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+    gap: 30px;
+
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.custumers_reviews{
+    margin-top: 100px;
+}
+.custumers_reviews .custumer_s{
+    margin-left: 130px;
+}
+.custumers_reviews .right{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    gap: 10px;
+
+    position: absolute;
+    width: 44px;
+    height: 43px;
+    left: 1380px;
+    top: 3330px;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+}
+.custumers_reviews .left{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    gap: 10px;
+
+    position: absolute;
+    width: 44px;
+    height: 43px;
+    left: 73px;
+    top: 3330px;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+}
+.slider .left_arrow{
+    box-sizing: border-box;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    
+    gap: 15px;
+    width: 47px;
+    height: 45px;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+
+}
+.slider .right_arrow{
+    box-sizing: border-box;
+    display: flex;
+    text-align: center;
+    padding: 6px;
+    gap: 15px;
+    width: 47px;
+    height: 45px;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+}
+.slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 1265px;
+    position: absolute;
+    margin-left: 70px;
+    margin-top: -200px;
+
+}
+.latest_posts .title{
+    margin-top: 30px;
+}
+.Posts{
+    display: flex;
+    margin-top: 40px;
+    margin-left: 130px;
+    margin-bottom: 105px;
+    gap: 56px;
+}
+.Posts .text{
+    margin-top: 10px;
+}
+.Posts .text a{
+    color: black;
+}
+
+.cat_img .cat_btn_1{
+    background-color: #ff6543;
+    color: white;
+    width: 81px;
+    height: 20.5px;
+    text-align: center;
+    font-size: 15px;
+}
+.cat_btn_2{
+    background-color: #ff6543;
+    color: white;
+    width: 80px;
+    height: 20.5px;
+    text-align: center;
+    font-size: 15px;
+}
+.cat_btn_3{
+    background-color: #ff6543;
+    color: white;
+    width: 56px;
+    height: 20.5px;
+    text-align: center;
+    font-size: 15px;
+}
+.cat_btn_4{
+    background-color: #ff6543;
+    color: white;
+    width: 125px;
+    height: 20.5px;
+    text-align: center;
+    font-size: 15px;
+}
+
