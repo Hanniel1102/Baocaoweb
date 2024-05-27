@@ -202,6 +202,10 @@
 .cart .cart-total .butt0 .butt3:hover{
     background-color: rgb(3, 162, 8);
 }
+.cart .cart-total .butt0 a{
+    text-decoration: none;
+    color: #F5F5F5;
+}
 #update-success{
     display: none;
     color: green;
