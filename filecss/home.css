@@ -7,6 +7,9 @@ body{
     flex-direction: column;
     gap: 140px;
 }
+iframe{
+    border: 0;
+}
 
 .border{
     border: 1px solid #e0e0e0;
