@@ -17,3 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+document.getElementById("toShop").addEventListener("click",function(event){
+    event.preventDefault();
+    window.location.href="../html123.html/page3.html"
+})
